@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>NYU CUSP Capstone - Modeling Gentrification</title>
+	 <!-- add bootstrap css file -->
+
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body>
+  <!-- navbar -->
+
+  <nav class="navbar navbar-expand-lg fixed-top ">
+	  <a class="navbar-brand" href="#">Home</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-4">
+
+	      <!-- <li class="nav-item">
+	        <a class="nav-link" data-value="intro" href="#">Introduction</a>
+	      </li> -->
+	      <li class="nav-item">
+	        <a class="nav-link " data-value="design" href="#">Design</a>
+	      </li>
+				<li class="nav-item">
+	        <a class="nav-link " data-value="data" href="#">Datasets</a>
+	      </li>
+				<li class="nav-item">
+	        <a class="nav-link " data-value="related" href="#">Methodology</a>
+	      </li>
+				<li class="nav-item">
+	        <a class="nav-link " data-value="experiment" href="#">Results</a>
+	      </li>
+				<li class="nav-item">
+	        <a class="nav-link " data-value="ref" href="#">References</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link " data-value="contact" href="#">Contact</a>
+	      </li>
+	    </ul>
+
+	  </div>
+</nav>
+<!-- header -->
+<header class="header ">
+  <div class="overlay"></div>
+   <div class="container">
+   	  <div class="description ">
+  	<h1>
+  		Exploring Gentrification and Displacement Through User-Generated Geographic Information
+			<br>
+  		<p style="margin-top: 50px">
+  		Our capstone project will study gentrification and displacement risk for neighborhoods within the NY metro region. Using methodology established by the UC Berkeley Urban Displacement Project, and expanding on last year’s CUSP capstone project, we will refine the methodology of the project and expand the scope of the model to incorporate not only administrative census data, but also user-generated social media data (geotagged Twitter data) and other sources of real estate, business, and transportation data.
+		</p>
+
+			<button class="btn btn-outline-secondary btn-lg" style="margin-top: 20px" onclick="location.href='demo/map.html'" type="submit"> Watch Demo </button>
+  	</h1>
+  </div>
+   </div>
+
+</header>
+
+
+<div class="about" id="design">
+	<div class="container">
+	  <h1 class="text-center">Project Design</h1>
+		<div class="row">
+			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="images/team-3.jpg" class="img-fluid">
+			</div> -->
+			<div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<p>
+					The majority of the previous literature studying gentrification and displacement have used “traditional” sources of census data, such as household income and demographic information. Recently, studies have begun to leverage other novel data sources, such as Chapple et al. (2018) utilizing Twitter data in San Francisco to study mobility patterns, or Cerron et al. (2018) using Foursquare & Instagram data to describe how people engage in public urban spaces.
+<br><br>The Urban Displacement Project (UDP) at UC Berkeley, along the 2018 CUSP capstone group, developed and refined a methodology to categorize the state of gentrification/displacement at the individual census tract level along an eight-stage gentrification typology index. Using this index, this project aims to extend upon that work and apply the methodology to the NY metro region using three different sources of near real-time data sources from online platforms: Twitter, Foursquare, and Zillow. <br><br>Drawing upon methodologies from similar previous studies, we will apply models to these data sources to understand different factors that influence gentrification beyond traditional census data, such as human mobility and business interaction. Understanding these factors will allow city officials and local community members to adequately prepare for future transformations in their neighborhood.
+
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="data">
+	<div class="container">
+	  <h1 class="text-center">Datasets</h1>
+		<div class="row">
+			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="images/team-3.jpg" class="img-fluid">
+			</div> -->
+			<div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<p>
+					Through coordination with our project sponsor, we’ve identified three different available online data sources to act as proxies for human activity across three different domains: Twitter for mobility, Zillow for housing, and Foursquare for businesses. These distinct sources will be used to evaluate whether or such generated data can help us improve our understanding of more granular gentrification patterns and activity in changing neighborhoods.
+
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="related">
+	<div class="container">
+	  <h1 class="text-center">Methodology</h1>
+		<div class="row">
+			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="images/team-3.jpg" class="img-fluid">
+			</div> -->
+			<div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<h3>Data Exploration</h3>
+				<p>
+					In order to set a solid foundation for our analysis and understand the limitations of the various datasets, we used simple visualizations as well as basic mathematical techniques to explore our currently available datasets, FourSquare and Twitter. This work included gaining an understanding of the profile of the data, the distribution of the data across our target geography, as well as an in depth look at some simple relationships within the datasets. Detailed clustering, correlation, and visual analysis were conducted to achieve these goals. Results and visuals presented in section 4 and the appendices.
+<br><br>We clustered Foursquare data by income level. Appendix A shows the results of our data exploration. It can be observed that high income neighborhoods have more business in general. When analyzing number of businesses per population, higher income neighborhoods also have a higher number of businesses per person. We believe that adding the feature businesses per population will improve our model. Briefly, based on this data exploration, the following features will be added:
+<br><br>● Business per population
+<br>● Business type as a percentage of total businesses
+<br><br>Similarly, Twitter data was clustered using several different metric combinations, with the best results coming from clustering the percentage of tweets by each user type (neighbor, local, visitor) and 5 clusters, identified as the optimal using the elbow method. These clusters identified different profiles of twitter
+behavior, detailed in the results section below, and were then compared with the known typologies to identify potential patterns in user behavior in typologies of interest.
+
+				</p>
+				<h3>Modeling</h3>
+				<p>
+					<br>Our goal is to model the typologies defined by last year’s capstone detailed in prior papers using new data sources, including Twitter, Foursquare, and Zillow. ​ The typologies are inherently divided between high income and low income neighborhoods, which will impact our model design to be similarly split. Our goal, therefore, will be to classify the types of neighborhood change (typologies) undergone in high income and low income areas using our other data sources, Zillow, FourSquare, and Twitter, with the hope of better understanding patterns and activity in neighborhoods across the spectrum of typologies.
+<br><br>We model our problem to output a multiclass classifier of the typologies. The output classifier is represented as y_i, where i corresponds to every census tract in our study. Data pre-processing has been critical to setting a strong foundation for our models. In particular, a large number of possible features in the datasets and a high likelihood for correlation in features required exploration for some feature engineering and dimensionality reduction techniques, such as normalization and regularization, respectively as well as multicollinearity testing. Additionally, handling of categorical variables through factorization will be critical given the frequency of categorical features across datasets.
+<br><br>Three different models were explored using different features for each dataset, as well as two predictive models (Models 1.4 and 1.5 for census/Foursquare only), with the target variable being the gentrification typology. Each model was evaluated with four methods: logistic regression, decision trees, support vector machines, and random forests.
+
+
+				</p>
+				<h3>Challenges</h3>
+				<p>
+					<br><br>There have been several key challenges for our team to overcome in executing this analysis. Data availability is the single largest challenge in painting a full picture of neighborhood change. Datasets from different sources are at different levels of detail and represent different timeframes-- for example, Foursquare data is only available as a snapshot from March 2018 while Twitter data covers 2012-2015. The Foursquare data provided is also only a sample (30% of the full population), with more high income areas represented as shown in Figure A.1 in Appendix A. Additionally, the Zillow data has taken longer than expected to be delivered and the team only has sample data for a few counties. For this reason, Zillow analysis has not been executed for this report and is at risk for final delivery, pending the reception of the data.
+
+<br><br>Modelling and identification of appropriate features has also presented some challenges, which we have used extensive data exploration to mitigate. Understanding the relationships between features within and across datasets is crucial to further refining our models. For example, with the FourSquare data, we have been exploring questions such as is the number of visitors to a certain type of business truly varied across neighborhood type or is there a bias in check-in user activity at different businesses across neighborhoods? Similarly, relationships between features like income and user activity and correlation within a single dataset (e.g. number of twitter users and number of tweets) must be accounted for in our modelling and interpretation.
+
+
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="experiment">
+	<div class="container">
+	  <h1 class="text-center">Result</h1>
+		<div class="row">
+			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="images/team-3.jpg" class="img-fluid">
+			</div> -->
+			<div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<h3>Foursquare Data Results</h3>
+				<p>
+					During the data exploration phase, several findings around business type stood out as significant. For example, donut shops and fast food restaurants made up a significantly larger proportion of business in low income neighborhoods than in high income areas. Additionally, the presence of coffee shops and Italian restaurants was noticeably larger in high income areas.
+          <br><br>Upon further exploration, we were also able to identify some business types which made up larger shares of gentrifying areas, such as Sandwich Places and Mexican Restaurants. The Foursquare data also highlighted interesting trends as you moved along the spectrum of gentrifying typologies-- for example, an increase in coffee shops and bars with further gentrification. As a last portion of our exploratory
+
+analysis, we examined the Foursquare data classes (necessary, optional) and categories (nutrition, social, consumption). Looking across the phases of gentrification, we again see a trend-- decreasing percentage of necessary businesses, with increasing optional businesses and decreasing nutritional percentage with increasing social businesses.
+
+				</p>
+				<h3>Twitter Data Results</h3>
+				<p>
+					The Twitter clustering based on percentages revealed 5 distinct profiles of neighborhood Twitter activity, with the majority of census tracts falling in locally dominated clusters 0 and 2. Clusters 1 and 4 show unique activity patterns with a predominance of visitor and neighbor tweets respectively.
+					Comparing these results to the typologies unveiled that most tracts associated with gentrifying neighborhoods have predominantly local tweets, with increasing visitor tweets as they move towards exclusion. Further digging revealed at risk tracts within clusters 1 and 4 show different median income
+and percentage rent levels than at risk neighborhoods in other clusters.
+<br><br>In general, model performance is poor across all four. Twitter models did not show improvement with the inclusion of population data, but improved considerably with the addition of income data as expected. Based on a study by Chapple et. al (2019), we expect visitor tweet behavior and demographics to provide even better insights into behavior and modelling. The addition of this data and exploration of anomalies discussed above should reveal more interesting features for use in our models.
+
+				</p>
+				<h3>Result Discussion</h3>
+				<p>
+
+					<br><br>The additional features using population and income improved the performance of the Foursquare data. From our data exploration, it was evident that businesses per population and income provide insights about the neighborhoods studied. The accuracy improved from 0.280 for model 1.1 to 0.357 for model 1.3 (see table 5). On the other hand, as expected, Twitter models didn’t improve with population given early exploration showed no correlation between these features and volume of tweets.
+<br><br>Appendix C shows the distribution of typology types. It can be seen that even a model with a strong prior that assumes all neighborhoods to be classified as MHI - Stable or Early Stage of Exclusion, which represents 0.37 of total typologies, can have a stronger performance than our base model that obtained 0.28 accuracy only. Similarly, the best performing model using Foursquare data on binary classes (gentrified and not gentrified) has an out of sample accuracy of 0.70, while the largest class (0 - ‘No Gentrification’) represents 0.72 of the total two classes​.
+In order to improve our results performance, we must continue to improve our features. We will extract Shannon-Wiener Index of complexity of activities as well as gravity and centrality indexes to better
+
+describe experiential qualities of public spaces and development opportunities of urban spaces and neighborhoods. In addition, in order to learn from the effects of the neighboring Census Tracts, we will map the average census tract and user generated data features spatial lag deciles (the average of the values for the neighbouring regions) using queen's weights (Anselin, Rey & Li 2014).
+
+
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="about" id="ref">
+	<div class="container">
+	  <h1 class="text-center">References</h1>
+		<div class="row">
+			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
+				<img src="images/team-3.jpg" class="img-fluid">
+			</div> -->
+			<div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<p>
+					<br><br>[1]		Chapple, K., Ate, P,. Matthew,. Z, Eva,. P (2019). Monitoring Streets through Tweets: ​Using User-generated Geographic Information to Predict Gentrification and Displacement.
+<br><br>[2]	Chapple, K.; Bianco, Federica, Kleinman, N.; Sabolevsky, S.; Chermesh Reshef, D.; Xi, H.; Rodrigo Vazquez, G.; Hambardzumyan, R. (2018). Map of Gentrification and Displacement for The Greater New York. NYU, CUSP.
+<br><br>[3]	López Baeza, Jesús & Cerrone, Damiano & Männigo, Kristjan. (2017). Comparing two methods for Urban Complexity calculation using Shannon-Wiener index. WIT Transactions on Ecology and Environment. 226. 369-378. 10.2495/SDP170321.
+<br><br>[4]	Luc Anselin and Sergio J. Rey and Wenwen Li. (2014). Metadata and provenance for spatial analysis: the case of spatial weights. International Journal of Geographical Information Science. 28, 11, 2261-2280, 2014, Taylor & Francis. ​https://doi.org/10.1080/13658816.2014.917313
+<br><br>[5]	Steif, Ken. A. M. (2016). ​Predicting gentrification using longitudinal census data.​ Philadelphia: http://urbanspatialanalysis.com/
+<br><br>[6] Reades, J., De Souza, J., & Hubbard, P. J. (2018). Understanding urban gentrification through Machine Learning: Predicting neighbourhood change in London.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Contact form -->
+<div class="contact-form" id="contact">
+	<div class="container">
+		<form>
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-12">
+				  <h1>Get in Touch</h1>
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-12 right">
+				   <div class="form-group">
+				   	 <input type="text" class="form-control form-control-lg" placeholder="Your Name" name="">
+				   </div>
+				   <div class="form-group">
+				   	 <input type="email" class="form-control form-control-lg" placeholder="YourEmail@email.com" name="email">
+				   </div>
+				   <div class="form-group">
+				   	 <textarea class="form-control form-control-lg">
+
+				   	 </textarea>
+				   </div>
+				   <input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- add Javasscript file from js file -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src='js/main.js'></script>
+
+</body>
+</html>
