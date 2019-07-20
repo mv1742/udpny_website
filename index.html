@@ -6,6 +6,10 @@
 
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="css/main.css">
+			<!-- add Javasscript file from js file -->
+			<script type="text/javascript" src="js/jquery.min.js"></script>
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+			<script type="text/javascript" src='js/main.js'></script>
 
 </head>
 <body>
@@ -20,23 +24,23 @@
 	  <div class="collapse navbar-collapse " id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-4">
 
-	      <!-- <li class="nav-item">
-	        <a class="nav-link" data-value="intro" href="#">Introduction</a>
-	      </li> -->
+	      <li class="nav-item">
+	        <a class="nav-link" data-value="intro" href="#">Visualization</a>
+	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link " data-value="design" href="#">Design</a>
 	      </li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 	        <a class="nav-link " data-value="data" href="#">Datasets</a>
-	      </li>
+	      </li> -->
 				<li class="nav-item">
 	        <a class="nav-link " data-value="related" href="#">Methodology</a>
 	      </li>
-				<li class="nav-item">
+				<!-- <li class="nav-item">
 	        <a class="nav-link " data-value="experiment" href="#">Results</a>
-	      </li>
+	      </li> -->
 				<li class="nav-item">
-	        <a class="nav-link " data-value="ref" href="#">References</a>
+	        <a class="nav-link " data-value="ref" href="#">Team</a>
 	      </li>
 	      <li class="nav-item">
 	        <a class="nav-link " data-value="contact" href="#">Contact</a>
@@ -57,12 +61,23 @@
   		Our capstone project will study gentrification and displacement risk for neighborhoods within the NY metro region. Using methodology established by the UC Berkeley Urban Displacement Project, and expanding on last year’s CUSP capstone project, we will refine the methodology of the project and expand the scope of the model to incorporate not only administrative census data, but also user-generated social media data (geotagged Twitter data) and other sources of real estate, business, and transportation data.
 		</p>
 
-			<button class="btn btn-outline-secondary btn-lg" style="margin-top: 20px" onclick="location.href='demo/map.html'" type="submit"> Watch Demo </button>
+			<button class="btn btn-outline-secondary btn-lg" style="margin-top: 20px" onclick="location.href='demo/1.pdf'" type="submit"> Read Our Report </button>
   	</h1>
   </div>
    </div>
 
 </header>
+
+
+<div class="about" id="intro">
+	<div class="container">
+	  <h1 class="text-center">Visualization</h1>
+<h3 class="text-center">Twitter Data </h3>
+<iframe src="demo/map.html" width="1200" height="1050"></iframe>
+<h3 class="text-center">FourSquare Data</h3>
+<iframe src="demo/map.html" width="1200" height="1050"></iframe>
+	</div>
+</div>
 
 
 <div class="about" id="design">
@@ -83,13 +98,13 @@
 	</div>
 </div>
 
-<div class="about" id="data">
+<!-- <div class="about" id="data">
 	<div class="container">
 	  <h1 class="text-center">Datasets</h1>
 		<div class="row">
-			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
+			 <div class="col-lg-4 col-md-4 col-sm-12">
 				<img src="images/team-3.jpg" class="img-fluid">
-			</div> -->
+			</div>
 			<div class="col-lg-8 col-md-8 col-sm-12 desc">
 				<p>
 					Through coordination with our project sponsor, we’ve identified three different available online data sources to act as proxies for human activity across three different domains: Twitter for mobility, Zillow for housing, and Foursquare for businesses. These distinct sources will be used to evaluate whether or such generated data can help us improve our understanding of more granular gentrification patterns and activity in changing neighborhoods.
@@ -98,7 +113,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="about" id="related">
 	<div class="container">
@@ -139,13 +154,13 @@ behavior, detailed in the results section below, and were then compared with the
 	</div>
 </div>
 
-<div class="about" id="experiment">
+<!-- <div class="about" id="experiment">
 	<div class="container">
 	  <h1 class="text-center">Result</h1>
 		<div class="row">
-			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
+			 <div class="col-lg-4 col-md-4 col-sm-12">
 				<img src="images/team-3.jpg" class="img-fluid">
-			</div> -->
+			</div>
 			<div class="col-lg-8 col-md-8 col-sm-12 desc">
 				<h3>Foursquare Data Results</h3>
 				<p>
@@ -177,23 +192,44 @@ describe experiential qualities of public spaces and development opportunities o
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="about" id="ref">
 	<div class="container">
-	  <h1 class="text-center">References</h1>
+	  <h1 class="text-center">Our Team</h1>
 		<div class="row">
 			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
 				<img src="images/team-3.jpg" class="img-fluid">
 			</div> -->
 			<div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<h3 class="text-center">Our Mentor</h3>
 				<p>
-					<br><br>[1]		Chapple, K., Ate, P,. Matthew,. Z, Eva,. P (2019). Monitoring Streets through Tweets: ​Using User-generated Geographic Information to Predict Gentrification and Displacement.
-<br><br>[2]	Chapple, K.; Bianco, Federica, Kleinman, N.; Sabolevsky, S.; Chermesh Reshef, D.; Xi, H.; Rodrigo Vazquez, G.; Hambardzumyan, R. (2018). Map of Gentrification and Displacement for The Greater New York. NYU, CUSP.
-<br><br>[3]	López Baeza, Jesús & Cerrone, Damiano & Männigo, Kristjan. (2017). Comparing two methods for Urban Complexity calculation using Shannon-Wiener index. WIT Transactions on Ecology and Environment. 226. 369-378. 10.2495/SDP170321.
-<br><br>[4]	Luc Anselin and Sergio J. Rey and Wenwen Li. (2014). Metadata and provenance for spatial analysis: the case of spatial weights. International Journal of Geographical Information Science. 28, 11, 2261-2280, 2014, Taylor & Francis. ​https://doi.org/10.1080/13658816.2014.917313
-<br><br>[5]	Steif, Ken. A. M. (2016). ​Predicting gentrification using longitudinal census data.​ Philadelphia: http://urbanspatialanalysis.com/
-<br><br>[6] Reades, J., De Souza, J., & Hubbard, P. J. (2018). Understanding urban gentrification through Machine Learning: Predicting neighbourhood change in London.
+					Karen Chapple, Ph.D., is Professor and Chair of City & Regional Planning at the University of California, Berkeley, where she holds the Carmel P. Friesen Chair in Urban Studies. Chapple studies inequalities in the planning, development, and governance of regions in the U.S. and Latin America, with a focus on economic development and housing.
+				</p>
+
+				<h3 class="text-center" style="margin-top: 20px">Tiffany Patafio</h3>
+				<p>
+					Tiffany graduated from Lafayette College. She is currently pursing her master degree at NYU CUSP.
+				</p>
+
+				<h3 class="text-center" style="margin-top: 20px">Kent Pan</h3>
+				<p>
+					Kent graduated from Cornell University. He is currently pursing her master degree at NYU CUSP.
+				</p>
+
+				<h3 class="text-center" style="margin-top: 20px">Manrique Vargas</h3>
+				<p>
+					Manrique graduated from University of Hong Kong. He is currently pursing her master degree at NYU CUSP.
+				</p>
+
+				<h3 class="text-center" style="margin-top: 20px">Jiawen Wan</h3>
+				<p>
+					Jiawen graduated from New York University. She is currently pursing her master degree at NYU CUSP.
+				</p>
+
+				<h3 class="text-center" style="margin-top: 20px">Tiancheng Yin</h3>
+				<p>
+					 Tiancheng graduated from University of California, Davis. He is currently pursing her master degree at NYU CUSP.
 				</p>
 			</div>
 		</div>
@@ -228,10 +264,7 @@ describe experiential qualities of public spaces and development opportunities o
 		</form>
 	</div>
 </div>
-<!-- add Javasscript file from js file -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src='js/main.js'></script>
+
 
 </body>
 </html>
