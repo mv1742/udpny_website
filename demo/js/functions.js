@@ -91,7 +91,7 @@ for (var i=4; i<9; i++) {
   $('.typology-legend').append(`
     <div>
       <div class="legend-color-box" style="background-color:${TypologyInfo.color};"></div>
-      <span> ${TypologyInfo.description} <span>
+      <span> ${TypologyInfo.description} </span>
     </div>
   `)
 }

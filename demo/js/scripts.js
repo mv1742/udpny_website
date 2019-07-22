@@ -4,7 +4,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoia3dwMjI1IiwiYSI6ImNqdWQ5NjIydTB3bHMzeW9na3hyb
 var map = new mapboxgl.Map({
   container: 'mapContainer',
   style: 'mapbox://styles/mapbox/dark-v9',
-  center: [-73.913269,40.687928],
+  center: [-73.822956,40.720274],
   zoom: 10.5,
 });
 
@@ -16,7 +16,7 @@ map.addControl(new mapboxgl.NavigationControl());
 // on what data source is selected for the map through the various buttons
 map.on('style.load', function() {
   $('.legend').hide();
-  $('.load-legend').show();
+  $('.typology-legend').show();
 
   // use map.getStyle() in the console to inspect the basemap layers
   map.setPaintProperty('water', 'fill-color', '#a4bee8')
@@ -72,6 +72,7 @@ map.on('style.load', function() {
     }
   });
 
+
   // when the user clicks on the census tract map, do...
   map.on('click', function (e) {
 
@@ -117,6 +118,60 @@ map.on('style.load', function() {
     });
   }
 });
+
+$('.legend').hide();
+$('.typology-legend').show();
+
+map.setPaintProperty('tract-fill', 'fill-opacity', 0.7);
+map.setPaintProperty('tract-fill', 'fill-color', {
+  type: 'categorical',
+  property: "typology",
+  stops: [
+    [
+      typologies[0],
+      TypologyLookup(typologies[0]).color,
+    ],
+    [
+      typologies[1],
+      TypologyLookup(typologies[1]).color,
+    ],
+    [
+      typologies[2],
+      TypologyLookup(typologies[2]).color,
+    ],
+    [
+      typologies[3],
+      TypologyLookup(typologies[3]).color,
+    ],
+    [
+      typologies[4],
+      TypologyLookup(typologies[4]).color,
+    ],
+    [
+      typologies[5],
+      TypologyLookup(typologies[5]).color,
+    ],
+    [
+      typologies[6],
+      TypologyLookup(typologies[6]).color,
+    ],
+    [
+      typologies[7],
+      TypologyLookup(typologies[7]).color,
+    ],
+    [
+      typologies[8],
+      TypologyLookup(typologies[8]).color,
+    ],
+    [
+      typologies[9],
+      TypologyLookup(typologies[9]).color,
+    ],
+  ]
+});
+map.setPaintProperty('highlight-line', 'line-opacity', 0.8);
+map.setPaintProperty('highlight-line', 'line-color', "limegreen");
+
 });
 
 //on button click, load map and legend for "All Tweets"
