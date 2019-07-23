@@ -7,6 +7,12 @@ var localStops = [0, 15, 30, 45, 60, 72, 85, 101];
 
 var visitorStops = [0, 15, 30, 45, 60, 72, 85, 101];
 
+var checkinStops = [0, 9500, 30000, 75000, 150000, 275000, 450000, 660001];
+
+var userStops = [0, 9000, 40000, 100000, 175000, 300000, 425000, 550001];
+
+var fsqvisitStops = [0, 10000, 40000, 100000, 175000, 350000, 600000, 1100001];
+
 var typologies = ['LI - Not Losing Low-Income Households', 'LI - Ongoing Displacement of Low-Income Households',
                   'LI - At Risk of Gentrification', 'LI - Ongoing Gentrification', 'MHI - Advanced Gentrification',
                   'MHI - Stable or Early Stage of Exclusion', 'MHI - Ongoing Exclusion', 'MHI - Advanced Exclusion',
@@ -107,7 +113,7 @@ for (var i=9; i<10; i++) {
   `)
 }
 
-// Code for building legends for the Twitter buttons
+// Code for building legends for the buttons
 for (var i=0; i<7; i++) {
   $('.alltweets-legend').append(`
     <div>
@@ -126,7 +132,28 @@ for (var i=0; i<7; i++) {
   $('.visitor-legend').append(`
     <div>
       <div class="legend-color-box" style="background-color:${hexCodes[i]};"></div>
-      <span> ${visitorStops[i]}% - ${visitorStops[i+1]-1}% </span>
+      <span> ${visitorStops[i]} - ${visitorStops[i+1]-1} check-ins </span>
+    </div>
+  `)
+
+  $('.checkin-legend').append(`
+    <div>
+      <div class="legend-color-box" style="background-color:${hexCodes[i]};"></div>
+      <span> ${checkinStops[i]} - ${checkinStops[i+1]-1} users </span>
+    </div>
+  `)
+
+  $('.users-legend').append(`
+    <div>
+      <div class="legend-color-box" style="background-color:${hexCodes[i]};"></div>
+      <span> ${userStops[i]} - ${userStops[i+1]-1} visits </span>
+    </div>
+  `)
+
+  $('.visits-legend').append(`
+    <div>
+      <div class="legend-color-box" style="background-color:${hexCodes[i]};"></div>
+      <span> ${fsqvisitStops[i]} - ${fsqvisitStops[i+1]-1} visits </span>
     </div>
   `)
 }

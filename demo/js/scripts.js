@@ -22,16 +22,16 @@ map.on('style.load', function() {
   map.setPaintProperty('water', 'fill-color', '#a4bee8')
 
   // sets up the geojson as a source in the map
-  map.addSource('twitter-data', {
+  map.addSource('all-data', {
     type: 'geojson',
-    data: './data/twitter-NY-final.geojson',
+    data: './data/all_data.geojson',
   });
 
   // initalize fill layer
   map.addLayer({
     id: 'tract-fill',
     type: 'fill',
-    source: 'twitter-data',
+    source: 'all-data',
     paint: {
       'fill-opacity': 0,
     }
@@ -41,7 +41,7 @@ map.on('style.load', function() {
   map.addLayer({
     id: 'typology-line',
     type: 'line',
-    source: 'twitter-data',
+    source: 'all-data',
     paint: {
       'line-opacity': 0,
       'line-color': 'black',
@@ -89,20 +89,22 @@ map.on('style.load', function() {
 
     // lookup the corresponding description for the typology
     var typologyDescription = tract.properties["typology"];
-    var ntaName = tract.properties["NTAName"];
 
     //add popup to display typology of selected tract and detailed data
     new mapboxgl.Popup()
     .setLngLat(e.lngLat)
     .setHTML(
       `<div id="popup" class="popup" style="z-index: 10; color:${TypologyLookup(typologyDescription).color};">` +
-      '<b> Neighborhood: </b>' + ntaName +" </br>" +
       '<b> Typology: </b>' + typologyDescription  + " </br>" +
       '<b> Total # of Tweets: </b>' + numeral(tract.properties["total_tweets"]).format('0,0') + " </br>" +
       '<b> # of Local Tweets: </b>' + numeral(tract.properties["local_tweets"]).format('0,0') + " (" +
-      tract.properties["pct_local"] + "%)" + " </br>" +
+      numeral(tract.properties["pct_local"]).format('0') + "%)" + " </br>" +
       '<b> # of Visitor Tweets: </b>' + numeral(tract.properties["visitor_tweets"]).format('0,0') + " (" +
-      tract.properties["pct_visitor"] + "%)" + " </br>" + '</div>'
+      numeral(tract.properties["pct_visitor"]).format('0') + "%)" + " </br>" +
+      '<b> Total # of FSQ Checkins: </b>' + numeral(tract.properties["Checkins"]).format('0,0') + " </br>" +
+      '<b> Total # of FSQ Users: </b>' + numeral(tract.properties["Users"]).format('0,0') + " </br>" +
+      '<b> Total # of FSQ Visits: </b>' + numeral(tract.properties["Visits"]).format('0,0') + " </br>" +
+      '</div>'
     )
     .addTo(map);
 
@@ -172,6 +174,61 @@ map.setPaintProperty('tract-fill', 'fill-color', {
 map.setPaintProperty('highlight-line', 'line-opacity', 0.8);
 map.setPaintProperty('highlight-line', 'line-color', "limegreen");
 
+});
+//on button click, load map and legend for "Gentrification Typologies"
+$('#buttonTypology').on('click', function() {
+  $('.legend').hide();
+  $('.typology-legend').show();
+
+  map.setPaintProperty('tract-fill', 'fill-opacity', 0.7);
+  map.setPaintProperty('tract-fill', 'fill-color', {
+    type: 'categorical',
+    property: "typology",
+    stops: [
+      [
+        typologies[0],
+        TypologyLookup(typologies[0]).color,
+      ],
+      [
+        typologies[1],
+        TypologyLookup(typologies[1]).color,
+      ],
+      [
+        typologies[2],
+        TypologyLookup(typologies[2]).color,
+      ],
+      [
+        typologies[3],
+        TypologyLookup(typologies[3]).color,
+      ],
+      [
+        typologies[4],
+        TypologyLookup(typologies[4]).color,
+      ],
+      [
+        typologies[5],
+        TypologyLookup(typologies[5]).color,
+      ],
+      [
+        typologies[6],
+        TypologyLookup(typologies[6]).color,
+      ],
+      [
+        typologies[7],
+        TypologyLookup(typologies[7]).color,
+      ],
+      [
+        typologies[8],
+        TypologyLookup(typologies[8]).color,
+      ],
+      [
+        typologies[9],
+        TypologyLookup(typologies[9]).color,
+      ],
+    ]
+  });
+  map.setPaintProperty('highlight-line', 'line-opacity', 0.8);
+  map.setPaintProperty('highlight-line', 'line-color', "limegreen");
 });
 
 //on button click, load map and legend for "All Tweets"
@@ -245,58 +302,71 @@ $('#buttonVisitor').on('click', function() {
   map.setPaintProperty('highlight-line', 'line-color', "red");
 });
 
-//on button click, load map and legend for "Gentrification Typologies"
-$('#buttonTypology').on('click', function() {
+//on button click, load map and legend for "FSQ Check-ins"
+$('#buttonCheckins').on('click', function() {
   $('.legend').hide();
-  $('.typology-legend').show();
+  $('.checkin-legend').show();
 
   map.setPaintProperty('tract-fill', 'fill-opacity', 0.7);
   map.setPaintProperty('tract-fill', 'fill-color', {
-    type: 'categorical',
-    property: "typology",
+    type: 'interval',
+    property: "Checkins",
     stops: [
-      [
-        typologies[0],
-        TypologyLookup(typologies[0]).color,
-      ],
-      [
-        typologies[1],
-        TypologyLookup(typologies[1]).color,
-      ],
-      [
-        typologies[2],
-        TypologyLookup(typologies[2]).color,
-      ],
-      [
-        typologies[3],
-        TypologyLookup(typologies[3]).color,
-      ],
-      [
-        typologies[4],
-        TypologyLookup(typologies[4]).color,
-      ],
-      [
-        typologies[5],
-        TypologyLookup(typologies[5]).color,
-      ],
-      [
-        typologies[6],
-        TypologyLookup(typologies[6]).color,
-      ],
-      [
-        typologies[7],
-        TypologyLookup(typologies[7]).color,
-      ],
-      [
-        typologies[8],
-        TypologyLookup(typologies[8]).color,
-      ],
-      [
-        typologies[9],
-        TypologyLookup(typologies[9]).color,
-      ],
+      [checkinStops[0], hexCodes[0]],
+      [checkinStops[1], hexCodes[1]],
+      [checkinStops[2], hexCodes[2]],
+      [checkinStops[3], hexCodes[3]],
+      [checkinStops[4], hexCodes[4]],
+      [checkinStops[5], hexCodes[5]],
+      [checkinStops[6], hexCodes[6]],
     ]
   });
   map.setPaintProperty('highlight-line', 'line-opacity', 0.8);
-  map.setPaintProperty('highlight-line', 'line-color', "limegreen");
+  map.setPaintProperty('highlight-line', 'line-color', "red");
+});
+
+//on button click, load map and legend for "FSQ Users"
+$('#buttonUsers').on('click', function() {
+  $('.legend').hide();
+  $('.users-legend').show();
+
+  map.setPaintProperty('tract-fill', 'fill-opacity', 0.7);
+  map.setPaintProperty('tract-fill', 'fill-color', {
+    type: 'interval',
+    property: "Users",
+    stops: [
+      [userStops[0], hexCodes[0]],
+      [userStops[1], hexCodes[1]],
+      [userStops[2], hexCodes[2]],
+      [userStops[3], hexCodes[3]],
+      [userStops[4], hexCodes[4]],
+      [userStops[5], hexCodes[5]],
+      [userStops[6], hexCodes[6]],
+    ]
+  });
+  map.setPaintProperty('highlight-line', 'line-opacity', 0.8);
+  map.setPaintProperty('highlight-line', 'line-color', "red");
+});
+
+//on button click, load map and legend for "FSQ Visits"
+$('#buttonVisitsFS').on('click', function() {
+  $('.legend').hide();
+  $('.visits-legend').show();
+
+  map.setPaintProperty('tract-fill', 'fill-opacity', 0.7);
+  map.setPaintProperty('tract-fill', 'fill-color', {
+    type: 'interval',
+    property: "Visits",
+    stops: [
+      [fsqvisitStops[0], hexCodes[0]],
+      [fsqvisitStops[1], hexCodes[1]],
+      [fsqvisitStops[2], hexCodes[2]],
+      [fsqvisitStops[3], hexCodes[3]],
+      [fsqvisitStops[4], hexCodes[4]],
+      [fsqvisitStops[5], hexCodes[5]],
+      [fsqvisitStops[6], hexCodes[6]],
+    ]
+  });
+  map.setPaintProperty('highlight-line', 'line-opacity', 0.8);
+  map.setPaintProperty('highlight-line', 'line-color', "red");
 });
