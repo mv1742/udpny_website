@@ -5,7 +5,7 @@ body{
 	margin: 0;
 	background:#f4f4f4;
 }
-html,h1,h2,h3,h4,h5,h6,a{
+html,h1,h2,h3,h4,h5,h6,a, li{
 	font-family: "Raleway";
 }
 .navbar{
@@ -94,7 +94,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 .about .desc h3{
 	color: #10828C;
 }
-.about .desc p{
+.about .desc p li{
 	line-height:2;
 	color:#888;
 }

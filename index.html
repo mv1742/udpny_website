@@ -60,8 +60,8 @@
   		Exploring Gentrification and Displacement Through User-Generated Geographic Information
 			<br>
   		<p style="margin-top: 50px">
-  		Our capstone project will study gentrification and displacement risk for neighborhoods within the NY metro region. Using methodology established by the UC Berkeley Urban Displacement Project, and expanding on last year’s CUSP capstone project, we will refine the methodology of the project and expand the scope of the model to incorporate not only administrative census data, but also user-generated social media data (geotagged Twitter data) and other sources of real estate, business, and transportation data.
-		</p>
+  		Gentrification and displacement are pressing issues for many cities today, as urban populations continue to grow and neighborhoods change rapidly in response. Our Capstone study utilizes two such novel data sources, Twitter and Foursquare, to explore gentrification and displacement risk for neighborhoods within the 31-county NY metro region. Using methodology established by the UC Berkeley Urban Displacement Project, we utilize both administrative census data and user-generated social media data, to model the gentrification phenomena and in changing neighborhoods.
+				</p>
 
 			<button class="btn btn-outline-secondary btn-lg" style="margin-top: 20px" onclick="location.href='demo/1.pdf'" type="submit"> Read Our Report </button>
   	</h1>
@@ -75,7 +75,7 @@
 	<div class="container">
 	  <h1 class="text-center">Visualization</h1>
 <!-- <h3 class="text-center"> Exploratory Twitter & Foursquare Data </h3> -->
-<iframe src="demo/map.html" width="108%" height="900"></iframe>
+<iframe src="demo/map.html" width="100%" height="900"></iframe>
 
 	</div>
 </div>
@@ -83,16 +83,27 @@
 
 <div class="about" id="design">
 	<div class="container">
-	  <h1 class="text-center">Project Design & Methodology</h1>
+	  <h1 class="text-center">Project Design</h1>
 		<div class="row">
 			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
 				<img src="images/team-3.jpg" class="img-fluid">
 			</div> -->
 			<div class="col-lg-8 col-md-8 col-sm-12 desc">
+				<h3>Data Exploration</h3>
+				<p>
+					An initial round of exploratory analysis was done on the datasets to gain an understanding of the profile of the data, distribution of the data across our target geography, and identify attributes of the data that can be feature engineered to include into our models.
+Foursquare data was initially clustered by income level.
+Similarly, Twitter data was clustered using several different metric combinations.
+
+				</p>
+				<h3>Data Modeling</h3>
 				<p>
 					The initial round of models focused on attempting to model the spectrum of gentrification, using multiclass classification to predict all eight gentrification typologies in the original UDP index.
-	Based on these results, we re-evaluated the modeling approach of the project through additional literature review and feedback from our project sponsor/mentor. Two major changes were done to address the poor performance of the models. First, we shifted from a multiclass classification approach to a binary classification approach
-	Second, we started to delve into different metrics of gentrification, namely the distinction between people gentrification, place gentrification, and hybrid gentrification approaches.
+Based on these results, we re-evaluated the modeling approach of the project through additional literature review and feedback from our project sponsor/mentor. Two major changes were done to address the poor performance of the models. First, we shifted from a multiclass classification approach to a binary classification approach
+Second, we started to delve into different metrics of gentrification, namely the distinction between people gentrification, place gentrification, and hybrid gentrification approaches.
+
+
+
 				</p>
 			</div>
 		</div>
@@ -118,15 +129,23 @@
 
 <div class="about" id="related">
 	<div class="container">
-	  <h1 class="text-center">Project Findings</h1>
+	  <h1 class="text-center">Findings</h1>
 		<div class="row">
 			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
 				<img src="images/team-3.jpg" class="img-fluid">
 			</div> -->
 			<div class="col-lg-8 col-md-8 col-sm-12 desc">
-				<p>
-We show that Foursquare and Twitter have the potential of improving prediction of gentrification, but their power for modelling gentrification alone is still weak compared to benefits derived from Census data. We propose alternative definitions of gentrification related to Supergentrification, people gentrification (using college education and income) and place gentrification (using housing and rent price). With these alternative, more specific definitions of change, we were able to see more impact from Foursquare and Twitter datasets on certain change types. Our results show that it is easier to model ‘people’ or ‘place’ gentrification than combining the two.
-				</p>
+
+				<ul type ="square">
+				<li> It is easier to model people or place than combining the two. This suggests that the phenomenon is complex, and people-place gentrification are not necessarily linked in a simple way as the typology maps originally seem to imply.</li>
+				<li> Creating specific change typologies like Supergentrification or those created using a single metric allowed us to dive deeper into people and place gentrification trends. </li>
+				<li> Visitor types and proximity to certain business types proved to be the most valuable features from the Foursquare and Twitter datasets.</li>
+					<li> Foursquare proved to provide the most benefit to understanding place gentrification.</li>
+					<li> Foursquare and Twitter have the potential of improving prediction of gentrification, but their standalone results are still weak compared to benefits derived from Census data.  </li>
+					<li> As Foursquare and Twitter continue to accumulate data moving forward, as this will allow for parallel analysis of formal sources like census and behavioral data like that from social media activity.
+</li>
+
+			</ul>
 			</div>
 		</div>
 	</div>
@@ -187,7 +206,7 @@ describe experiential qualities of public spaces and development opportunities o
 
 				<h3 class="text-center" style="margin-top: 20px">Tiffany Patafio</h3>
 				<p>
-					Tiffany graduated from Lafayette College with a degree in Mechanical Engineering and focus in Psychology. In her time as a consultant, she’s worked with clients to host training courses, such as Building your Analytics Acumen, leverage techniques such as data visualization and machine learning, and most recently helping police departments leverage social media data to better understand public sentiment. She is currently pursuing an Advanced Certificate from CUSP while working with Alliance for Downtown NY to support in their efforts to become more data driven.
+					Tiffany graduated from Lafayette College with a degree in Mechanical Engineering and focus in Psychology. In her time as a consultant, she has worked with clients to host training courses, such as Building your Analytics Acumen, leverage techniques such as data visualization and machine learning, and most recently helping police departments leverage social media data to better understand public sentiment. She is currently pursuing an Advanced Certificate from CUSP while working with Alliance for Downtown NY to support in their efforts to become more data driven.
 				</p>
 
 				<h3 class="text-center" style="margin-top: 20px">Kent Pan</h3>

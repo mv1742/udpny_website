@@ -1,1 +1,1 @@
-Course webpage for NYU big data
+Webpage for NYU CUSP capstone project
