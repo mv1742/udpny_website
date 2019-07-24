@@ -52,7 +52,7 @@
 	  </div>
 </nav>
 <!-- header -->
-<header class="header ">
+<header class="header">
   <div class="overlay"></div>
    <div class="container">
    	  <div class="description ">
@@ -75,7 +75,7 @@
 	<div class="container">
 	  <h1 class="text-center">Visualization</h1>
 <!-- <h3 class="text-center"> Exploratory Twitter & Foursquare Data </h3> -->
-<iframe src="demo/map.html" width="100%" height="900"></iframe>
+<iframe src="demo/map.html" width="108%" height="900"></iframe>
 
 	</div>
 </div>
@@ -83,16 +83,16 @@
 
 <div class="about" id="design">
 	<div class="container">
-	  <h1 class="text-center">Project Design</h1>
+	  <h1 class="text-center">Project Design & Methodology</h1>
 		<div class="row">
 			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
 				<img src="images/team-3.jpg" class="img-fluid">
 			</div> -->
 			<div class="col-lg-8 col-md-8 col-sm-12 desc">
 				<p>
-					Gentrification can be defined as "simultaneously a spatial and social practice that results in the transformation of a working-class or vacant area of the central city into middle- class residential or commercial use" (Lees, 2013). While gentrification can bring new businesses, resources, and other positive changes to a neighborhood, the rapid neighborhood change associated with gentrification can be destabilizing to long-term, low-income residents already in the area.
-We aim to evaluate whether this new data can improve on the existing typology and determine if these sources can support more timely, near real-time predictions.
-
+					The initial round of models focused on attempting to model the spectrum of gentrification, using multiclass classification to predict all eight gentrification typologies in the original UDP index.
+	Based on these results, we re-evaluated the modeling approach of the project through additional literature review and feedback from our project sponsor/mentor. Two major changes were done to address the poor performance of the models. First, we shifted from a multiclass classification approach to a binary classification approach
+	Second, we started to delve into different metrics of gentrification, namely the distinction between people gentrification, place gentrification, and hybrid gentrification approaches.
 				</p>
 			</div>
 		</div>
@@ -118,31 +118,14 @@ We aim to evaluate whether this new data can improve on the existing typology an
 
 <div class="about" id="related">
 	<div class="container">
-	  <h1 class="text-center">Methodology</h1>
+	  <h1 class="text-center">Project Findings</h1>
 		<div class="row">
 			<!-- <div class="col-lg-4 col-md-4 col-sm-12">
 				<img src="images/team-3.jpg" class="img-fluid">
 			</div> -->
 			<div class="col-lg-8 col-md-8 col-sm-12 desc">
-				<h3>Data Exploration</h3>
 				<p>
-					An initial round of exploratory analysis was done on the datasets to gain an understanding of the profile of the data, distribution of the data across our target geography, and identify attributes of the data that can be feature engineered to include into our models.
-Foursquare data was initially clustered by income level.
-Similarly, Twitter data was clustered using several different metric combinations.
-
-				</p>
-				<h3>Data Modeling</h3>
-				<p>
-					The initial round of models focused on attempting to model the spectrum of gentrification, using multiclass classification to predict all eight gentrification typologies in the original UDP index.
-Based on these results, we re-evaluated the modeling approach of the project through additional literature review and feedback from our project sponsor/mentor. Two major changes were done to address the poor performance of the models. First, we shifted from a multiclass classification approach to a binary classification approach
-Second, we started to delve into different metrics of gentrification, namely the distinction between people gentrification, place gentrification, and hybrid gentrification approaches.
-
-
-
-				</p>
-				<h3>Challenges</h3>
-				<p>
-					<br><br>TData availability is the single largest challenge in painting a full picture of neighborhood change. Datasets from different sources are at different levels of detail and represent different timeframes. Modelling and identification of appropriate features has also presented some challenges, which we have used extensive data exploration to mitigate.
+We show that Foursquare and Twitter have the potential of improving prediction of gentrification, but their power for modelling gentrification alone is still weak compared to benefits derived from Census data. We propose alternative definitions of gentrification related to Supergentrification, people gentrification (using college education and income) and place gentrification (using housing and rent price). With these alternative, more specific definitions of change, we were able to see more impact from Foursquare and Twitter datasets on certain change types. Our results show that it is easier to model ‘people’ or ‘place’ gentrification than combining the two.
 				</p>
 			</div>
 		</div>
@@ -224,7 +207,7 @@ describe experiential qualities of public spaces and development opportunities o
 
 				<h3 class="text-center" style="margin-top: 20px">Tiancheng Yin</h3>
 				<p>
-					 Tiancheng graduated from University of California, Davis. He is currently pursing her master degree at NYU CUSP.
+					 Tiancheng graduated from University of California, Davis. He is currently pursing his master degree at NYU CUSP.
 				</p>
 			</div>
 		</div>
