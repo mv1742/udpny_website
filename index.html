@@ -44,9 +44,9 @@
 				<li class="nav-item">
 	        <a class="nav-link " data-value="ref" href="#">Team</a>
 	      </li>
-	      <li class="nav-item">
+	      <!-- <li class="nav-item">
 	        <a class="nav-link " data-value="contact" href="#">Contact</a>
-	      </li>
+	      </li> -->
 	    </ul>
 
 	  </div>
@@ -74,7 +74,7 @@
 <div class="about" id="intro">
 	<div class="container">
 	  <h1 class="text-center">Visualization</h1>
-<h3 class="text-center"> Exploratory Twitter & Foursquare Data </h3>
+<!-- <h3 class="text-center"> Exploratory Twitter & Foursquare Data </h3> -->
 <iframe src="demo/map.html" width="1200" height="900"></iframe>
 
 	</div>
@@ -91,10 +91,7 @@
 			<div class="col-lg-8 col-md-8 col-sm-12 desc">
 				<p>
 					Gentrification can be defined as "simultaneously a spatial and social practice that results in the transformation of a working-class or vacant area of the central city into middle- class residential or commercial use" (Lees, 2013). While gentrification can bring new businesses, resources, and other positive changes to a neighborhood, the rapid neighborhood change associated with gentrification can be destabilizing to long-term, low-income residents already in the area.
-<br><br>
-The UC Berkeley Urban Displacement Project (UDP) developed a gentrification typology index to quantify and identify the state of change of any given neighborhood. This index, which relies entirely on administrative census data, was applied to the NY metro region by the 2018 CUSP capstone group (Chapple, 2018). This capstone project aims to extend upon that work by using novel data sources from online platforms beyond the typical census data sources, to explore the relationships between modern online data sources and gentrification. We aim to evaluate whether this new data can improve on the existing typology and determine if these sources can support more timely, near real-time predictions.
-<br><br>
-The large availability of data in online platforms has the potential to add enormous value to urban studies. By measuring  these social  needs  stored in online media servers, a new layer of the city is defined and thus, it is available for analysis and eventually intervention. Ultimately, this will help develop a deeper, more nuanced understanding of different factors that influence gentrification, and will allow city officials and local community members to adequately prepare for future transformations in their neighborhood.
+We aim to evaluate whether this new data can improve on the existing typology and determine if these sources can support more timely, near real-time predictions.
 
 				</p>
 			</div>
@@ -129,36 +126,23 @@ The large availability of data in online platforms has the potential to add enor
 			<div class="col-lg-8 col-md-8 col-sm-12 desc">
 				<h3>Data Exploration</h3>
 				<p>
-					An initial round of exploratory analysis was done on the datasets to gain an understanding of the profile of the data, distribution of the data across our target geography, and identify attributes of the data that can be feature engineered to include into our models. Detailed clustering, correlation, and visual analysis were conducted to achieve these goals.
-<br><br>
-Foursquare data was initially clustered by income level, with the results shown in Appendix B. High income neighborhoods were found to have more businesses in general, as well as a higher number of businesses per person. In addition, certain business types were found in different proportions between high vs low income areas. For example, donut shops and fast food restaurants made up a significantly larger proportion of business in low income neighborhoods, while coffee shops and Italian restaurants were more prevalent in high income areas.
-<br><br>
-In gentrifying areas specifically, some business types (such as sandwich shops and Mexican restaurants) were proportionally more significant. Along the  spectrum of gentrifying typologies, certain businesses became noticeably more prevalent with gentrification -- for example, an increase in coffee shops and bars with further gentrification. Looking at Foursquare data classes (necessary, optional) and categories (nutrition, social, consumption) more broadly, similar trends occur with increased gentrification -- decreasing percentage of necessary businesses, with increasing optional businesses and decreasing nutritional percentage with increasing social businesses.
-<br><br>
-Similarly, Twitter data was clustered using several different metric combinations, with the best results coming from clustering the percentage of tweets by each user type (neighbor, local, visitor) and 5 clusters, identified as the optimal using the elbow method. These clusters identified different profiles of twitter behavior, and were then compared with the UDP typologies to identify potential patterns in user behavior in typologies of interest.
-
+					An initial round of exploratory analysis was done on the datasets to gain an understanding of the profile of the data, distribution of the data across our target geography, and identify attributes of the data that can be feature engineered to include into our models.
+Foursquare data was initially clustered by income level.
+Similarly, Twitter data was clustered using several different metric combinations.
 
 				</p>
 				<h3>Data Modeling</h3>
 				<p>
-					The initial round of models focused on attempting to model the spectrum of gentrification, using multiclass classification to predict all eight gentrification typologies in the original UDP index. The chosen techniques for each model iteration included support vector machines, logistic regression, decision trees, and random forest models.
-<br><br>
-The first baseline model used basic census features that were identified by the previous year’s capstone group and UDP. Two separate models, described in Table X below, were built to evaluate the impact of adding in Foursquare and Twitter data, respectively, to evaluate if the new data improved the accuracy of the model. The F1 score was chosen as the primary metric for evaluating our model performance, as it captures the true false positive/negative rates of the model.
-<br><br>
-Based on these results, we re-evaluated the modeling approach of the project through additional literature review and feedback from our project sponsor/mentor. Two major changes were done to address the poor performance of the models. First, we shifted from a multiclass classification approach to a binary classification approach - this simplification would target only the ongoing and advanced gentrification tracts, as successfully identifying gentrifying and changing areas is of much greater than interest than identifying areas that are already stable and generally known to not be changing.
-<br><br>
-Second, we started to delve into different metrics of gentrification, namely the distinction between people gentrification, place gentrification, and hybrid gentrification approaches. The “people gentrification” idea as argued by Ellen & O’Regan (2011) states that gentrification is driven mainly be new high-income, higher-education populations and results in new housing demand for neighborhood real estate. The “place gentrification” theory, as argued by Smith (1979) states that gentrification is driven not by people, but primarily by land & housing markets - real estate investment and development occurs initially and then sets off the process of neighborhood change. A hybrid approach (as adopted by the UDP), adopts and combines elements from the two separate ideas. Based on these distinct ideas, we adopt several binary target variables to capture these distinct variations on the gentrification concept.
+					The initial round of models focused on attempting to model the spectrum of gentrification, using multiclass classification to predict all eight gentrification typologies in the original UDP index.
+Based on these results, we re-evaluated the modeling approach of the project through additional literature review and feedback from our project sponsor/mentor. Two major changes were done to address the poor performance of the models. First, we shifted from a multiclass classification approach to a binary classification approach
+Second, we started to delve into different metrics of gentrification, namely the distinction between people gentrification, place gentrification, and hybrid gentrification approaches.
 
 
 
 				</p>
 				<h3>Challenges</h3>
 				<p>
-					<br><br>There have been several key challenges for our team to overcome in executing this analysis. Data availability is the single largest challenge in painting a full picture of neighborhood change. Datasets from different sources are at different levels of detail and represent different timeframes-- for example, Foursquare data is only available as a snapshot from March 2018 while Twitter data covers 2012-2015. The Foursquare data provided is also only a sample (30% of the full population), with more high income areas represented as shown in Figure A.1 in Appendix A. Additionally, the Zillow data has taken longer than expected to be delivered and the team only has sample data for a few counties. For this reason, Zillow analysis has not been executed for this report and is at risk for final delivery, pending the reception of the data.
-
-<br><br>Modelling and identification of appropriate features has also presented some challenges, which we have used extensive data exploration to mitigate. Understanding the relationships between features within and across datasets is crucial to further refining our models. For example, with the FourSquare data, we have been exploring questions such as is the number of visitors to a certain type of business truly varied across neighborhood type or is there a bias in check-in user activity at different businesses across neighborhoods? Similarly, relationships between features like income and user activity and correlation within a single dataset (e.g. number of twitter users and number of tweets) must be accounted for in our modelling and interpretation.
-
-
+					<br><br>TData availability is the single largest challenge in painting a full picture of neighborhood change. Datasets from different sources are at different levels of detail and represent different timeframes. Modelling and identification of appropriate features has also presented some challenges, which we have used extensive data exploration to mitigate.
 				</p>
 			</div>
 		</div>
@@ -250,7 +234,7 @@ describe experiential qualities of public spaces and development opportunities o
 
 
 <!-- Contact form -->
-<div class="contact-form" id="contact">
+<!-- <div class="contact-form" id="contact">
 	<div class="container">
 		<form>
 			<div class="row">
@@ -274,8 +258,22 @@ describe experiential qualities of public spaces and development opportunities o
 			</div>
 		</form>
 	</div>
+</div> -->
+<div class="container">
+	<h1 class="text-center"><img src="nyu.png" width="550" height="100"></h1>
 </div>
 
+<!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright: New York University Center for Urban Science & Progress
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 </body>
 </html>

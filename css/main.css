@@ -9,7 +9,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 	font-family: "Raleway";
 }
 .navbar{
-	background:#F97300;
+	background:#248BD6;
 }
 .nav-link , .navbar-brand{
 	color: #f4f4f4;
@@ -54,7 +54,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 
 }
 .description h1{
-	color:#F97300 ;
+	color:#248BD6 ;
 }
 .description p{
 	color:#666;
@@ -63,8 +63,8 @@ html,h1,h2,h3,h4,h5,h6,a{
 	line-height: 1.5;
 }
 .description button{
-	border:1px  solid #F97300;
-	background:#F97300;
+	border:1px  solid #248BD6;
+	background:#248BD6;
 	color:#fff;
 }
 .about{
@@ -73,7 +73,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 	position: relative;
 }
 .about h1{
-	color:#F97300;
+	color:#248BD6;
 	margin: 2em;
 }
 .about img{
@@ -201,4 +201,10 @@ html,h1,h2,h3,h4,h5,h6,a{
 .contact-form .right .form-control::placeholder{
 	color: #888;
 	font-size: 16px;
+}
+.page-footer {
+	background-color: #248BD6;
+}
+.page-footer .a {
+	color: white;
 }
